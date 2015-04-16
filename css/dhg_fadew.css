@@ -1,0 +1,30 @@
+.dhg-fade-in-image img.dhg-top:hover{
+    opacity: 0;
+}
+
+.dhg-fade-in-image a,
+.dhg-fade-in-image .dhg-wrap-div{
+	position:relative;
+    /*overflow: hidden;*/
+    display: block !important;
+    text-align: center;
+}
+
+.dhg-fade-in-image img{
+	position:absolute;
+	max-width: none !important;
+	width: auto;
+	left: 0;
+	right: 0;
+	display: inline-block;
+	/*-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;*/
+}
+
+.dhg_clearfix:after{
+  content: "";
+  display: table;
+  clear: both;
+}
