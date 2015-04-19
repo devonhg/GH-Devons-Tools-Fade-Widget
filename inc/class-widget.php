@@ -32,11 +32,11 @@ class Fade_Image_Widget extends WP_Widget {
             'image_main' => '',
             'image_fade' => '',
             'link' => '',
-            'width' => '150px',
+            /*'width' => '150px',
             'height' => '150px',
-            'align' => 'center',
+            'align' => 'center',*/
             'length' => '1',
-            'crop' => 'no',
+            /*'crop' => 'no',*/
         );
 
         if (isset( $instance[ 'image_main' ] )) { $image_main = $instance[ 'image_main' ]; } else  $image_main = "";
@@ -46,9 +46,9 @@ class Fade_Image_Widget extends WP_Widget {
         if (isset( $instance[ 'link_title' ] )) { $link_title = $instance[ 'link_title' ]; } else  $link_title = "";
         if (isset( $instance[ 'width' ] )) { $width = $instance[ 'width' ]; } else  $width = '150px';
         if (isset( $instance[ 'height' ] )) { $height = $instance[ 'height' ]; } else  $height = '150px';
-        if (isset( $instance[ 'align' ] )) { $align = $instance[ 'align' ]; } else  $align = 'center';
+        /*if (isset( $instance[ 'align' ] )) { $align = $instance[ 'align' ]; } else  $align = 'center';*/
         if (isset( $instance[ 'length' ] )) { $length = $instance[ 'length' ]; } else  $length = '1';
-        if (isset( $instance[ 'crop' ] )) { $crop = $instance[ 'crop' ]; } else  $crop = 'no';
+        //if (isset( $instance[ 'crop' ] )) { $crop = $instance[ 'crop' ]; } else  $crop = 'no';
          
         // markup for form ?>
 
@@ -87,7 +87,7 @@ class Fade_Image_Widget extends WP_Widget {
             <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'link_title' ); ?>" name="<?php echo $this->get_field_name( 'link_title' ); ?>" value="<?php echo esc_attr( $link_title ); ?>">
         </p>
 
-        <?php /*
+        
 
         <h2>Dimensions</h2>
         <p>
@@ -99,19 +99,22 @@ class Fade_Image_Widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'height' ); ?>">Height:  The height, takes CSS measurement values. </label>
             <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'height' ); ?>" name="<?php echo $this->get_field_name( 'height' ); ?>" value="<?php echo esc_attr( $height ); ?>">
         </p>
+
         <h2>Other Options</h2>
+        <?php /*
         <p>
             <label for="<?php echo $this->get_field_id( 'align' ); ?>">Alignment: </label><br>
             <input class="widefat" type="radio" id="<?php echo $this->get_field_id( 'align' ); ?>" name="<?php echo $this->get_field_name( 'align' ); ?>" value="center" <?php if ($align == 'center') echo 'checked'; ?> >Center<br>
             <input class="widefat" type="radio" id="<?php echo $this->get_field_id( 'align' ); ?>" name="<?php echo $this->get_field_name( 'align' ); ?>" value="left" <?php if ($align == 'left') echo 'checked';  ?> >Left<br>
             <input class="widefat" type="radio" id="<?php echo $this->get_field_id( 'align' ); ?>" name="<?php echo $this->get_field_name( 'align' ); ?>" value="right" <?php if ($align == 'right') echo 'checked';  ?> >Right
         </p>
+        */ ?>
         <p>
             <label for="<?php echo $this->get_field_id( 'length' ); ?>">Length: The duration of the fade in seconds. </label>
             <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'length' ); ?>" name="<?php echo $this->get_field_name( 'length' ); ?>" value="<?php echo esc_attr( $length ); ?>">
         </p>
 
-        
+        <?php /*
         <p>
             <label for="<?php echo $this->get_field_id( 'align' ); ?>">Crop?: </label><br>
             <input class="widefat" type="radio" id="<?php echo $this->get_field_id( 'crop' ); ?>" name="<?php echo $this->get_field_name( 'crop' ); ?>" value="yes" <?php if ($crop == 'yes') echo 'checked'; ?> >Yes<br>
@@ -129,11 +132,11 @@ class Fade_Image_Widget extends WP_Widget {
         $instance[ 'link' ] = strip_tags( $new_instance[ 'link' ] );
         $instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
         $instance[ 'link_title' ] = strip_tags( $new_instance[ 'link_title' ] );
-        /*$instance[ 'width' ] = strip_tags( $new_instance[ 'width' ] );
+        $instance[ 'width' ] = strip_tags( $new_instance[ 'width' ] );
         $instance[ 'height' ] = strip_tags( $new_instance[ 'height' ] );
-        $instance[ 'align' ] = strip_tags( $new_instance[ 'align' ] );
+        /*$instance[ 'align' ] = strip_tags( $new_instance[ 'align' ] );*/
         $instance[ 'length' ] = strip_tags( $new_instance[ 'length' ] );
-        $instance[ 'crop' ] = strip_tags( $new_instance[ 'crop' ] );*/
+        //$instance[ 'crop' ] = strip_tags( $new_instance[ 'crop' ] );
         return $instance;
     }
      
@@ -148,8 +151,10 @@ class Fade_Image_Widget extends WP_Widget {
 
             <style>
                 .<?php echo $this->id ?>{
-                    /*height:<?php echo $instance['height'] ?>;
-                    width:<?php echo $instance['width'] ?>;*/
+                    height: auto;
+                    widht: auto;
+                    height:<?php echo $instance['height'] ?>;
+                    width:<?php echo $instance['width'] ?>;
                     <?php /* if (  $instance['align'] == 'center' ){ ?>
                         margin: 0 auto;
                     <?php } elseif (  $instance['align'] == 'right' ) { ?>
@@ -178,7 +183,7 @@ class Fade_Image_Widget extends WP_Widget {
                     <a class='<?php echo $this->id ?>' title='<?php echo $instance['link_title'] ?>' href='<?php echo $instance['link'] ?>'>  
                 <?php } else { ?>
                     <div class='<?php echo $this->id ?> dhg-wrap-div'>      
-                <?php } ?>
+                <?php  }  ?>
                     <?php if ($instance['image_fade'] != '') {?>
                         <img alt="<?php echo $this->id ?>" class="dhg-bottom" src='<?php echo $instance['image_fade']; ?>' />
                     <?php } else{ ?>
@@ -194,7 +199,7 @@ class Fade_Image_Widget extends WP_Widget {
                     </a>  
                 <?php } else { ?>
                     </div>      
-                <?php } ?>                
+                <?php  } ?>                
             </div>
         <?php
         echo $after_widget;   
