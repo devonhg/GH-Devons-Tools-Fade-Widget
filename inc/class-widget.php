@@ -108,13 +108,15 @@ class Fade_Image_Widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'length' ); ?>">Length: The duration of the fade in seconds. </label>
             <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'length' ); ?>" name="<?php echo $this->get_field_name( 'length' ); ?>" value="<?php echo esc_attr( $length ); ?>">
         </p>
+
+        <?php /*
         <p>
             <label for="<?php echo $this->get_field_id( 'align' ); ?>">Crop?: </label><br>
             <input class="widefat" type="radio" id="<?php echo $this->get_field_id( 'crop' ); ?>" name="<?php echo $this->get_field_name( 'crop' ); ?>" value="yes" <?php if ($crop == 'yes') echo 'checked'; ?> >Yes<br>
             <input class="widefat" type="radio" id="<?php echo $this->get_field_id( 'crop' ); ?>" name="<?php echo $this->get_field_name( 'crop' ); ?>" value="no" <?php if ($crop == 'no') echo 'checked';  ?> >No<br>
         </p>
-
-        <?php   
+        */
+        
 
     }
      

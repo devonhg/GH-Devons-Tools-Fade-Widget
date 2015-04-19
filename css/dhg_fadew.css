@@ -17,6 +17,8 @@
 	left: 0;
 	right: 0;
 	display: inline-block;
+	max-width: 100% !important;
+	height: auto !important; 
 	/*-webkit-transition: opacity 1s ease-in-out;
 	-moz-transition: opacity 1s ease-in-out;
 	-o-transition: opacity 1s ease-in-out;
@@ -27,4 +29,8 @@
   content: "";
   display: table;
   clear: both;
+}
+
+.dhg-wrap-div{
+	max-width: 100%;
 }
