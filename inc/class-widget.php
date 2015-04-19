@@ -87,6 +87,8 @@ class Fade_Image_Widget extends WP_Widget {
             <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'link_title' ); ?>" name="<?php echo $this->get_field_name( 'link_title' ); ?>" value="<?php echo esc_attr( $link_title ); ?>">
         </p>
 
+        <?php /*
+
         <h2>Dimensions</h2>
         <p>
             <label for="<?php echo $this->get_field_id( 'width' ); ?>">Width: The width, takes CSS measurement values. </label>
@@ -109,7 +111,7 @@ class Fade_Image_Widget extends WP_Widget {
             <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'length' ); ?>" name="<?php echo $this->get_field_name( 'length' ); ?>" value="<?php echo esc_attr( $length ); ?>">
         </p>
 
-        <?php /*
+        
         <p>
             <label for="<?php echo $this->get_field_id( 'align' ); ?>">Crop?: </label><br>
             <input class="widefat" type="radio" id="<?php echo $this->get_field_id( 'crop' ); ?>" name="<?php echo $this->get_field_name( 'crop' ); ?>" value="yes" <?php if ($crop == 'yes') echo 'checked'; ?> >Yes<br>
@@ -127,11 +129,11 @@ class Fade_Image_Widget extends WP_Widget {
         $instance[ 'link' ] = strip_tags( $new_instance[ 'link' ] );
         $instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
         $instance[ 'link_title' ] = strip_tags( $new_instance[ 'link_title' ] );
-        $instance[ 'width' ] = strip_tags( $new_instance[ 'width' ] );
+        /*$instance[ 'width' ] = strip_tags( $new_instance[ 'width' ] );
         $instance[ 'height' ] = strip_tags( $new_instance[ 'height' ] );
         $instance[ 'align' ] = strip_tags( $new_instance[ 'align' ] );
         $instance[ 'length' ] = strip_tags( $new_instance[ 'length' ] );
-        $instance[ 'crop' ] = strip_tags( $new_instance[ 'crop' ] );
+        $instance[ 'crop' ] = strip_tags( $new_instance[ 'crop' ] );*/
         return $instance;
     }
      
@@ -146,9 +148,9 @@ class Fade_Image_Widget extends WP_Widget {
 
             <style>
                 .<?php echo $this->id ?>{
-                    height:<?php echo $instance['height'] ?>;
-                    width:<?php echo $instance['width'] ?>;
-                    <?php if (  $instance['align'] == 'center' ){ ?>
+                    /*height:<?php echo $instance['height'] ?>;
+                    width:<?php echo $instance['width'] ?>;*/
+                    <?php /* if (  $instance['align'] == 'center' ){ ?>
                         margin: 0 auto;
                     <?php } elseif (  $instance['align'] == 'right' ) { ?>
                         float: right;
@@ -157,11 +159,11 @@ class Fade_Image_Widget extends WP_Widget {
                     <?php } ?>
                     <?php if( $instance['crop'] == 'yes' ){ ?>
                         overflow: hidden;
-                    <?php } ?>
+                    <?php } */?>
                 }   
 
                 .<?php echo $this->id ?> img{
-                    height:<?php echo $instance['height'] ?>;
+                    /*height:<?php echo $instance['height'] ?>;*/
                     -webkit-transition: opacity <?php echo $instance['length'] ?>s ease-in-out;
                     -moz-transition: opacity <?php echo $instance['length'] ?>s ease-in-out;
                     -o-transition: opacity <?php echo $instance['length'] ?>s ease-in-out;
